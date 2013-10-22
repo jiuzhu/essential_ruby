@@ -27,5 +27,12 @@ pv = gets.chomp.to_f
 #   Re-use the pmt method that you defined in Challenge 1.
 
 # ====================
-# Your code goes here.
+loan_quotes.each do |intrate|
+  interestrate = intrate["rate"]
+
+  puts "Howdy, this is #{intrate["bank"]} and your interest rate is: #{intrate["rate"]}!"
+    payment_amount = pmt(intrate["rate"], nper, pv)
+  puts "Your monthly payment is:" +payment_amount.to_s
+end
+
 # ====================

@@ -15,7 +15,18 @@
 #   http://en.wikipedia.org/wiki/Mortgage_calculator
 
 # =========================================
-# Your code to define the method goes here.
+#int_rate = gets.chomp.to_f
+#num_payments = gets.chomp.to_i
+#prin_value = gets.chomp.to_f
+
+def pmt(int_rate, num_payments, prin_value)
+  payment_amount = ((int_rate/100/12)*prin_value)/(1-((1+(int_rate/100/12))**(-num_payments*12)))
+  return payment_amount
+end
+
+#payment_amount = pmt(int_rate, num_payments, prin_value)
+#puts payment_amount
+
 # =========================================
 
-puts "Your monthly payment will be #{pmt(0.01, 60, 30000)}."
+#puts "Your monthly payment will be #{pmt(0.01, 60, 30000)}."
